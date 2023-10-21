@@ -3,8 +3,6 @@ import { View, Text, Image , Pressable, TextInput, TouchableOpacity, Button} fro
 import React, { useState } from 'react'
 //import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
-//import Checkbox from "expo-checkbox"
-//import Button from '../components/Button';
 
 const Create = ({ navigation }) => {
     const [isPasswordShown, setIsPasswordShown] = useState(false);
@@ -106,7 +104,7 @@ const Create = ({ navigation }) => {
                         paddingLeft: 1
                     }}>
                     {/* Other signup-related components */}
-                    <Button title="Sign Up" onPress={() => navigation.navigate("main")} />
+                    <Button title="Register" onPress={() => navigation.navigate("profile")} />
                 </View>
 
                 <View style={{
