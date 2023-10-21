@@ -19,13 +19,8 @@ const Create = ({ navigation }) => {
                         marginVertical: 12,
                         color: 'black'
                     }}>
-                        Hi Welcome Back ! 👋
+                        Create Account 👋
                     </Text>
-
-                    <Text style={{
-                        fontSize: 16,
-                        color: 'black'
-                    }}>Hello again you have been missed!</Text>
                 </View>
 
                 <View style={{ marginBottom: 12 }}>
