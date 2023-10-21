@@ -7,6 +7,15 @@ import { Ionicons } from "@expo/vector-icons";
 const Create = ({ navigation }) => {
     const [isPasswordShown, setIsPasswordShown] = useState(false);
     const [isChecked, setIsChecked] = useState(false);
+
+    const SignUp = async (email,password) => {
+        const response = await db.SignUp(email,password);
+        if (response){
+            navigation.navigate("Create")
+        }else{
+            Alert('Email already registred')
+        }
+    }
     
     return (
             <View style={{ flex: 1, marginHorizontal: 22 }}>

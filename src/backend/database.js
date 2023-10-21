@@ -19,30 +19,21 @@ class Database{
     }
      
     SignIn = async (email , password) => {
-        signInWithEmailAndPassword(this.auth,email, password)
-        .then((userCredential) => {
-          // Sign-in was successful
-          const user = userCredential.user; // User information
-          console.log('Signed in as:', user.email);
-        })
-        .catch((error) => {
-          // Sign-in failed
-          console.error('Error:', error);
-        });
+        try{
+            await signInWithEmailAndPassword(this.auth,email, password)
+            return true
+        }catch(err){
+            return false
+        }
     }
      
     SignUp = async (email, password) => {
-        createUserWithEmailAndPassword(this.auth, email, password)
-            .then((userCredential) => {
-                // Signed up 
-                const user = userCredential.user;
-                // ...
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // ..
-            });
+        try{
+            await createUserWithEmailAndPassword(this.auth,email, password)
+            return true
+        }catch(err){
+            return false
+        }
      }
      
      // export const LogOut = () => {
@@ -53,4 +44,4 @@ class Database{
 }
 
 
-export default database;
+export default Database;

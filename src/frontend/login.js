@@ -2,13 +2,27 @@ import React, { useState } from "react";
 import {TouchableOpacity, Pressable, TextInput, View, Text, Button} from 'react-native';
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import Database from "../backend/database";
+import showAlert from "../util/alert";
 
 
 const Login = () => {
     const [isPasswordShown, setIsPasswordShown] = useState(false);
     const [email, onChangeEmail] = useState('');
     const [password, onChangePassword] = useState('');
+    const [status, setStatus] = useState(false);
     const navigation = useNavigation();
+    const db = new Database();
+
+    const SignIn = async (email,password) => {
+        const response = await db.SignIn(email,password);
+        console.log(response)
+        if (response){
+            setStatus(true)
+        }else{
+            showAlert('Email or password incorrect. Try again.')
+        }
+    }
 
     return (
         <View style={{ flex: 1, marginHorizontal: 22 }}>
@@ -110,7 +124,12 @@ const Login = () => {
                     }}>
                     {/* Other signup-related components */}
                     <TouchableOpacity 
-                        onPress={() => navigation.navigate("Home")}
+                        onPress={ async () => {
+                            await SignIn(email,password)
+                            if(status){
+                                navigation.navigate("Home")
+                            }
+                        }}
                         style={{
                             width: "100%",
                             height: "100%",
