@@ -20,7 +20,7 @@ let rtcProps = {
 }
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator /*screenOptions={{ headerShown: false }}*/>
         <Stack.Group>
           <Stack.Screen name="Login" component={Login}/>
           <Stack.Screen name="Home" component={Home}/>          

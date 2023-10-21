@@ -49,9 +49,32 @@ const Profile = ({ navigation }) => {
                     <TextInput style={styles.input}/>
                 </View>
 
-                <View style={styles.input}>
+                <View style={{
+                    width: "50%",
+                    height: 48,
+                    borderColor: '#00507A',
+                    backgroundColor: '#00507A',
+                    borderWidth: 1,
+                    borderRadius: 8,
+                    alignItems: "center",
+                    justifyContent: "center",
+                    paddingLeft: 1
+                }}>
                     {/* Other signup-related components */}
-                    <Button title="Sign Up" onPress={() => navigation.navigate("Assesment")} />
+                    <TouchableOpacity 
+                        onPress={() => navigation.navigate("Assesment")}
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            borderColor: '#00507A',
+                            borderWidth: 1,
+                            borderRadius: 8,
+                            alignItems: "center",
+                            justifyContent: "center",
+                        }}
+                    >
+                        <Text style={{ color: 'white', fontSize: 20 }}>Assessment</Text>
+                    </TouchableOpacity>
                 </View>
 
                 <View style={{
