@@ -69,7 +69,7 @@ const Create = ({ navigation }) => {
                 </View>
                 <View style={styles.input}>
                     {/* Other signup-related components */}
-                    <Button title="Register" onPress={() => navigation.navigate("profile")} />
+                    <Button title="Register" onPress={() => navigation.navigate("Profile")} />
                 </View>
 
                 <View style={{
@@ -79,7 +79,7 @@ const Create = ({ navigation }) => {
                 }}>
                     <Text style={{ fontSize: 16, color: 'black' }}>Already have an account ?</Text>
                     <Pressable
-                        onPress={() => navigation.navigate("login")}
+                        onPress={() => navigation.navigate("Login")}
                     >
                         <Text style={{
                             fontSize: 16,

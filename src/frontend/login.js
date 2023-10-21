@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import {TouchableOpacity, Pressable, TextInput, View, Text, Button} from 'react-native';
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 
-const Login = ({ navigation }) => {
+const Login = () => {
     const [isPasswordShown, setIsPasswordShown] = useState(false);
     const [email, onChangeEmail] = useState('');
     const [password, onChangePassword] = useState('');
+    const navigation = useNavigation();
 
     return (
         <View style={{ flex: 1, marginHorizontal: 22 }}>
@@ -106,7 +108,7 @@ const Login = ({ navigation }) => {
                         paddingLeft: 1
                     }}>
                     {/* Other signup-related components */}
-                    <Button title="Sign In" onPress={() => navigation.navigate("main")} />
+                    <Button title="Sign In" onPress={() => navigation.navigate("Home")} />
                 </View>
 
                 <View style={{
@@ -116,7 +118,7 @@ const Login = ({ navigation }) => {
                 }}>
                     <Text style={{ fontSize: 16, color: 'black' }}>Don't have an account? </Text>
                     <Pressable
-                        onPress={() => navigation.navigate("create")}
+                        onPress={() => navigation.navigate("Create")}
                     >
                         <Text style={{
                             fontSize: 16,

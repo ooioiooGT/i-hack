@@ -51,7 +51,7 @@ const Profile = ({ navigation }) => {
 
                 <View style={styles.input}>
                     {/* Other signup-related components */}
-                    <Button title="Sign Up" onPress={() => navigation.navigate("main")} />
+                    <Button title="Sign Up" onPress={() => navigation.navigate("Assesment")} />
                 </View>
 
                 <View style={{
@@ -61,7 +61,7 @@ const Profile = ({ navigation }) => {
                 }}>
                     <Text style={{ fontSize: 16, color: 'black' }}>Already have an account ?</Text>
                     <Pressable
-                        onPress={() => navigation.navigate("login")}
+                        onPress={() => navigation.navigate("Login")}
                     >
                         <Text style={{
                             fontSize: 16,

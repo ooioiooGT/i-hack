@@ -58,7 +58,7 @@ const Home = ({ navigation }) => {
                     }}>
                 <Button 
                     title='Take Assessment' 
-                    onPress={() => navigation.navigate("assessment")}>
+                    onPress={() => navigation.navigate("Assesment")}>
                     
                 </Button>
             </View>
