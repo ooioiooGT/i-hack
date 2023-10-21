@@ -2,6 +2,7 @@ import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, processColor } from 'react-native';
 import Create from "./src/frontend/create"
+import Login from "./src/frontend/login"
 import Profile from './src/frontend/profile';
 import Assesment from './src/frontend/Assesment';
 // import AgoraUIKit from 'agora-rn-uikit';
@@ -12,7 +13,7 @@ let rtcProps = {
   channelName :"Test"
 }
   return (
-    <Create />
+    <Login/>
   );
 }
 
