@@ -100,7 +100,8 @@ const Login = () => {
                 <View style={{
                         width: "100%",
                         height: 48,
-                        borderColor: 'black',
+                        borderColor: '#00507A',
+                        backgroundColor: '#00507A',
                         borderWidth: 1,
                         borderRadius: 8,
                         alignItems: "center",
@@ -108,7 +109,20 @@ const Login = () => {
                         paddingLeft: 1
                     }}>
                     {/* Other signup-related components */}
-                    <Button title="Sign In" onPress={() => navigation.navigate("Home")} />
+                    <TouchableOpacity 
+                        onPress={() => navigation.navigate("Home")}
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            borderColor: '#00507A',
+                            borderWidth: 1,
+                            borderRadius: 8,
+                            alignItems: "center",
+                            justifyContent: "center",
+                        }}
+                    >
+                        <Text style={{ color: 'white', fontSize: 20 }}>Sign In</Text>
+                    </TouchableOpacity>
                 </View>
 
                 <View style={{

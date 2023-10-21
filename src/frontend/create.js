@@ -67,9 +67,32 @@ const Create = ({ navigation }) => {
                         </TouchableOpacity>
                     </View>
                 </View>
-                <View style={styles.input}>
+                <View style={{
+                    width: "100%",
+                    height: 48,
+                    borderColor: '#00507A',
+                    backgroundColor: '#00507A',
+                    borderWidth: 1,
+                    borderRadius: 8,
+                    alignItems: "center",
+                    justifyContent: "center",
+                    paddingLeft: 1
+                }}>
                     {/* Other signup-related components */}
-                    <Button title="Register" onPress={() => navigation.navigate("Profile")} />
+                    <TouchableOpacity 
+                        onPress={() => navigation.navigate("Profile")}
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            borderColor: '#00507A',
+                            borderWidth: 1,
+                            borderRadius: 8,
+                            alignItems: "center",
+                            justifyContent: "center",
+                        }}
+                    >
+                        <Text style={{ color: 'white', fontSize: 20 }}>Register</Text>
+                    </TouchableOpacity>
                 </View>
 
                 <View style={{

@@ -27,14 +27,28 @@ const Home = ({ navigation }) => {
             <View style={{
                 width: "100%",
                 height: 48,
-                borderColor: 'black',
+                borderColor: '#00507A',
+                backgroundColor: '#00507A',
                 borderWidth: 1,
                 borderRadius: 8,
                 alignItems: "center",
                 justifyContent: "center",
                 paddingLeft: 1
                 }}>
-                <Button title="Practice" onPress={() => navigation.navigate("lessons")}/>
+                <TouchableOpacity 
+                    onPress={() => navigation.navigate("Assesment")}
+                    style={{
+                        width: "100%",
+                        height: "100%",
+                        borderColor: '#00507A',
+                        borderWidth: 1,
+                        borderRadius: 8,
+                        alignItems: "center",
+                        justifyContent: "center",
+                    }}
+                >
+                    <Text style={{ color: 'white', fontSize: 20 }}>Practice</Text>
+                </TouchableOpacity>
             </View>
                   
             <View style={{marginVertical: 22}}>
@@ -47,20 +61,30 @@ const Home = ({ navigation }) => {
             </View>
 
             <View style={{
+                width: "100%",
+                height: 48,
+                borderColor: '#00507A',
+                backgroundColor: '#00507A',
+                borderWidth: 1,
+                borderRadius: 8,
+                alignItems: "center",
+                justifyContent: "center",
+                paddingLeft: 1
+                }}>
+                <TouchableOpacity 
+                    onPress={() => navigation.navigate("Assesment")}
+                    style={{
                         width: "100%",
-                        height: 48,
-                        borderColor: 'black',
+                        height: "100%",
+                        borderColor: '#00507A',
                         borderWidth: 1,
                         borderRadius: 8,
                         alignItems: "center",
                         justifyContent: "center",
-                        paddingLeft: 1
-                    }}>
-                <Button 
-                    title='Take Assessment' 
-                    onPress={() => navigation.navigate("Assesment")}>
-                    
-                </Button>
+                    }}
+                >
+                    <Text style={{ color: 'white', fontSize: 20 }}>Take Assessment</Text>
+                </TouchableOpacity>
             </View>
         </View>
     );
