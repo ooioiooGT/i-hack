@@ -1,5 +1,5 @@
 // src/components/Register.json
-import { View, Text, Image , Pressable, TextInput, TouchableOpacity } from 'react-native'
+import { View, Text, Image , Pressable, TextInput, TouchableOpacity, Button} from 'react-native'
 import React, { useState } from 'react'
 //import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
@@ -95,26 +95,39 @@ const Create = ({ navigation }) => {
                         </TouchableOpacity>
                     </View>
                 </View>
+                <View style={{
+                        width: "100%",
+                        height: 48,
+                        borderColor: 'black',
+                        borderWidth: 1,
+                        borderRadius: 8,
+                        alignItems: "center",
+                        justifyContent: "center",
+                        paddingLeft: 1
+                    }}>
+                    {/* Other signup-related components */}
+                    <Button title="Sign Up" onPress={() => navigation.navigate("main")} />
+                </View>
 
                 <View style={{
                     flexDirection: "row",
                     justifyContent: "center",
                     marginVertical: 22
                 }}>
-                    <Text style={{ fontSize: 16, color: 'black' }}>Don't have an account ? </Text>
+                    <Text style={{ fontSize: 16, color: 'black' }}>Already have an account ?</Text>
                     <Pressable
-                        onPress={() => navigation.navigate("Signup")}
+                        onPress={() => navigation.navigate("login")}
                     >
                         <Text style={{
                             fontSize: 16,
                             color: 'primary',
                             fontWeight: "bold",
                             marginLeft: 6
-                        }}>Register</Text>
+                        }}>Login</Text>
                     </Pressable>
                 </View>
             </View>
-        //</SafeAreaView>
+        
     )
 }
 
