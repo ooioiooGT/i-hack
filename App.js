@@ -3,7 +3,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, processColor } from 'react-native';
 import Create from "./src/frontend/create"
 import Profile from './src/frontend/profile';
-import AgoraUIKit from 'agora-rn-uikit';
+import Assesment from './src/frontend/Assesment';
+// import AgoraUIKit from 'agora-rn-uikit';
 export default function App() {
 
 let rtcProps = {
@@ -11,7 +12,7 @@ let rtcProps = {
   channelName :"Test"
 }
   return (
-    <Create/>
+    <Assesment/>
   );
 }
 
