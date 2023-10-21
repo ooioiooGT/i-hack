@@ -1,5 +1,5 @@
 // src/components/Register.json
-import { View, Text, Image , Pressable, TextInput, TouchableOpacity, Button, styles} from 'react-native'
+import { View, Text, Image , Pressable, TextInput, TouchableOpacity, Button, StyleSheet} from 'react-native'
 import React, { useState } from 'react'
 
 const Profile = ({ navigation }) => {
@@ -18,115 +18,38 @@ const Profile = ({ navigation }) => {
                     </Text>
                 </View>
 
-                <View style={{ marginBottom: 12 }}>
-                    <Text style={{
-                        fontSize: 16,
-                        fontWeight: 400,
-                        marginVertical: 8
-                    }}>First Name</Text>
+                <View style={styles.container}>
+                    <Text style={styles.text}>First Name</Text>
 
-                    <TextInput style={{
-                        width: "50%",
-                        height: 48,
-                        borderColor: 'black',
-                        borderWidth: 1,
-                        borderRadius: 8,
-                        alignItems: "center",
-                        justifyContent: "center",
-                        paddingLeft: 22
-                    }}>
-                    </TextInput>
+                    <TextInput style={styles.input}/>
+
                 </View>
 
-                <View style={{ marginBottom: 12 }}>
-                    <Text style={{
-                        fontSize: 16,
-                        fontWeight: 400,
-                        marginVertical: 8
-                    }}>Last Name</Text>
+                <View style={styles.container}>
+                    <Text style={styles.text}>Last Name</Text>
 
-                    <TextInput style={{
-                        width: "50%",
-                        height: 48,
-                        borderColor: 'black',
-                        borderWidth: 1,
-                        borderRadius: 8,
-                        alignItems: "center",
-                        justifyContent: "center",
-                        paddingLeft: 22
-                    }}>
-                    </TextInput>
-                </View>
-                <View style={{ marginBottom: 12 }}>
-                    <Text style={{
-                        fontSize: 16,
-                        fontWeight: 400,
-                        marginVertical: 8
-                    }}>Age</Text>
-
-                    <TextInput style={{
-                        width: "50%",
-                        height: 48,
-                        borderColor: 'black',
-                        borderWidth: 1,
-                        borderRadius: 8,
-                        alignItems: "center",
-                        justifyContent: "center",
-                        paddingLeft: 22
-                    }}>
-                    </TextInput>
+                    <TextInput style={styles.input}/>
                 </View>
 
-                <View style={{ marginBottom: 12 }}>
-                    <Text style={{
-                        fontSize: 16,
-                        fontWeight: 400,
-                        marginVertical: 8
-                    }}>Native Language</Text>
+                <View style={styles.container}>
+                    <Text style={styles.text}>Age</Text>
 
-                    <TextInput style={{
-                        width: "50%",
-                        height: 48,
-                        borderColor: 'black',
-                        borderWidth: 1,
-                        borderRadius: 8,
-                        alignItems: "center",
-                        justifyContent: "center",
-                        paddingLeft: 22
-                    }}>
-                    </TextInput>
+                    <TextInput style={styles.input}/>
                 </View>
 
-                <View style={{ marginBottom: 12 }}>
-                    <Text style={{
-                        fontSize: 16,
-                        fontWeight: 400,
-                        marginVertical: 8
-                    }}>What Language want to learn</Text>
+                <View style={styles.container}>
+                    <Text style={styles.text}>Native Language</Text>
 
-                    <TextInput style={{
-                        width: "50%",
-                        height: 48,
-                        borderColor: 'black',
-                        borderWidth: 1,
-                        borderRadius: 8,
-                        alignItems: "center",
-                        justifyContent: "center",
-                        paddingLeft: 22
-                    }}>
-                    </TextInput>
+                    <TextInput style={styles.input}/>
                 </View>
 
-                <View style={{
-                        width: "100%",
-                        height: 48,
-                        borderColor: 'black',
-                        borderWidth: 1,
-                        borderRadius: 8,
-                        alignItems: "center",
-                        justifyContent: "center",
-                        paddingLeft: 1
-                    }}>
+                <View style={styles.container}>
+                    <Text style={styles.text}>What Language want to learn</Text>
+
+                    <TextInput style={styles.input}/>
+                </View>
+
+                <View style={styles.input}>
                     {/* Other signup-related components */}
                     <Button title="Sign Up" onPress={() => navigation.navigate("main")} />
                 </View>
@@ -149,7 +72,30 @@ const Profile = ({ navigation }) => {
                 </View>
             </View>
         
-    )
-}
+    )}
+
+    const styles = StyleSheet.create({
+        container: {
+            marginBottom: 12,
+        },
+
+        text:{
+            fontSize: 16,
+            fontWeight: 400,
+            marginVertical: 8,  
+        },
+
+        input: {
+            width: "50%",
+            height: 48,
+            borderColor: 'black',
+            borderWidth: 1,
+            borderRadius: 8,
+            alignItems: "center",
+            justifyContent: "center",
+            paddingLeft: 22,  
+        },
+
+      })
 
 export default Profile

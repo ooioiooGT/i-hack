@@ -13,7 +13,7 @@ let rtcProps = {
   channelName :"Test"
 }
   return (
-    <Login/>
+    <Create/>
   );
 }
 

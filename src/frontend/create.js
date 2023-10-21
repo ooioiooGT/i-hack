@@ -1,5 +1,5 @@
 // src/components/Register.json
-import { View, Text, Image , Pressable, TextInput, TouchableOpacity, Button} from 'react-native'
+import { View, Text, Pressable, TextInput, TouchableOpacity, Button, StyleSheet} from 'react-native'
 import React, { useState } from 'react'
 //import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
@@ -10,7 +10,7 @@ const Create = ({ navigation }) => {
     
     return (
             <View style={{ flex: 1, marginHorizontal: 22 }}>
-                <View style={{ marginVertical: 22 }}>
+                <View style={styles.container}>
                     <Text style={{
                         fontSize: 22,
                         fontWeight: 'bold',
@@ -21,23 +21,10 @@ const Create = ({ navigation }) => {
                     </Text>
                 </View>
 
-                <View style={{ marginBottom: 12 }}>
-                    <Text style={{
-                        fontSize: 16,
-                        fontWeight: 400,
-                        marginVertical: 8
-                    }}>Email address</Text>
+                <View style={styles.container}>
+                    <Text style={styles.text}>Email address</Text>
 
-                    <View style={{
-                        width: "100%",
-                        height: 48,
-                        borderColor: 'black',
-                        borderWidth: 1,
-                        borderRadius: 8,
-                        alignItems: "center",
-                        justifyContent: "center",
-                        paddingLeft: 22
-                    }}>
+                    <View style={styles.input}>
                         <TextInput
                             placeholder='Enter your email address'
                             placeholderTextColor={'black'}
@@ -49,23 +36,10 @@ const Create = ({ navigation }) => {
                     </View>
                 </View>
 
-                <View style={{ marginBottom: 12 }}>
-                    <Text style={{
-                        fontSize: 16,
-                        fontWeight: 400,
-                        marginVertical: 8
-                    }}>Password</Text>
+                <View style={styles.container}>
+                    <Text style={styles.text}>Password</Text>
 
-                    <View style={{
-                        width: "100%",
-                        height: 48,
-                        borderColor: 'black',
-                        borderWidth: 1,
-                        borderRadius: 8,
-                        alignItems: "center",
-                        justifyContent: "center",
-                        paddingLeft: 22
-                    }}>
+                    <View style={styles.input}>
                         <TextInput
                             placeholder='Enter your password'
                             placeholderTextColor={'black'}
@@ -93,16 +67,7 @@ const Create = ({ navigation }) => {
                         </TouchableOpacity>
                     </View>
                 </View>
-                <View style={{
-                        width: "100%",
-                        height: 48,
-                        borderColor: 'black',
-                        borderWidth: 1,
-                        borderRadius: 8,
-                        alignItems: "center",
-                        justifyContent: "center",
-                        paddingLeft: 1
-                    }}>
+                <View style={styles.input}>
                     {/* Other signup-related components */}
                     <Button title="Register" onPress={() => navigation.navigate("profile")} />
                 </View>
@@ -118,7 +83,6 @@ const Create = ({ navigation }) => {
                     >
                         <Text style={{
                             fontSize: 16,
-                            color: 'primary',
                             fontWeight: "bold",
                             marginLeft: 6
                         }}>Login</Text>
@@ -128,5 +92,29 @@ const Create = ({ navigation }) => {
         
     )
 }
+
+const styles = StyleSheet.create({
+  container: {
+      marginBottom: 12,
+  },
+
+  text:{
+      fontSize: 16,
+      fontWeight: 400,
+      marginVertical: 8,  
+  },
+
+  input: {
+      width: "100%",
+      height: 48,
+      borderColor: 'black',
+      borderWidth: 1,
+      borderRadius: 8,
+      alignItems: "center",
+      justifyContent: "center",
+      paddingLeft: 22,  
+  },
+
+})
 
 export default Create
