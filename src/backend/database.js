@@ -26,13 +26,16 @@ class Database{
             return false
         }
     }
-     
+    
     SignUp = async (email, password) => {
         try{
-            await createUserWithEmailAndPassword(this.auth,email, password)
-            return true
+            const user = await createUserWithEmailAndPassword(this.auth,email, password)
+            //const userId = user.uid 
+            // console.log('---------------------')
+            // console.log(user.user.uid)
+            return user.user.uid
         }catch(err){
-            return false
+            return null
         }
      }
      
