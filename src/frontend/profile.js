@@ -1,9 +1,13 @@
 // src/components/Register.json
 import { View, Text, Image , Pressable, TextInput, TouchableOpacity, Button, StyleSheet} from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useRoute } from '@react-navigation/native'
 
 const Profile = ({ navigation }) => {
-    //const [isPasswordShown, setIsPasswordShown] = useState(false);
+    const [isPasswordShown, setIsPasswordShown] = useState(false);
+    //const [userID, setUserId] = useState('');
+    
+    const route = useRoute();
     
     return (
             <View style={{ flex: 1, marginHorizontal: 22 }}>
@@ -14,10 +18,9 @@ const Profile = ({ navigation }) => {
                         marginVertical: 12,
                         color: 'black'
                     }}>
-                        Profile 👋
+                         Profile 👋 {route.params.id} 
                     </Text>
                 </View>
-
                 <View style={styles.container}>
                     <Text style={styles.text}>First Name</Text>
 

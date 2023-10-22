@@ -3,17 +3,24 @@ import { View, Text, Pressable, TextInput, TouchableOpacity, Button, StyleSheet}
 import React, { useState } from 'react'
 //import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
+import Database from '../backend/database';
+import showAlert from '../util/alert';
+
 
 const Create = ({ navigation }) => {
     const [isPasswordShown, setIsPasswordShown] = useState(false);
     const [isChecked, setIsChecked] = useState(false);
+    const [email, onChangeEmail] = useState('');
+    const [password, onChangePassword] = useState('');
+    const db = new Database();
 
     const SignUp = async (email,password) => {
         const response = await db.SignUp(email,password);
-        if (response){
-            navigation.navigate("Create")
+        //console.log(response)
+        if (response != null){
+            navigation.navigate("Profile", {id: response})
         }else{
-            Alert('Email already registred')
+            showAlert('Email already registred')
         }
     }
     
@@ -34,14 +41,15 @@ const Create = ({ navigation }) => {
                     <Text style={styles.text}>Email address</Text>
 
                     <View style={styles.input}>
-                        <TextInput
-                            placeholder='Enter your email address'
-                            placeholderTextColor={'black'}
-                            keyboardType='email-address'
-                            style={{
-                                width: "100%"
-                            }}
-                        />
+                    <TextInput
+                        placeholder='Enter your email address'
+                        placeholderTextColor={'black'}
+                        keyboardType='email-address'
+                        onChangeText={onChangeEmail} 
+                        style={{
+                            width: "100%"
+                        }}
+                    />
                     </View>
                 </View>
 
@@ -53,6 +61,7 @@ const Create = ({ navigation }) => {
                             placeholder='Enter your password'
                             placeholderTextColor={'black'}
                             secureTextEntry={isPasswordShown}
+                            onChangeText={onChangePassword}
                             style={{
                                 width: "100%"
                             }}
@@ -89,7 +98,7 @@ const Create = ({ navigation }) => {
                 }}>
                     {/* Other signup-related components */}
                     <TouchableOpacity 
-                        onPress={() => navigation.navigate("Profile")}
+                        onPress={() => SignUp(email, password)}
                         style={{
                             width: "100%",
                             height: "100%",
